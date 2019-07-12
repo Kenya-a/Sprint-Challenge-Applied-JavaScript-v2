@@ -9,7 +9,8 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-const headerContainer = document.querySelector(".header")
+const headerContainer = document.querySelector(".header-container")
+// headerContainer.appendChild(Header())
 
 function Header() {
 
@@ -32,11 +33,11 @@ function Header() {
 
 // organize
 
-header.appendChild(date)
-header.appendChild(title)
-header.appendChild(temp)
+    header.appendChild(title)
+    title.appendChild(date)
+    title.appendChild(temp)
 
-return header
+return Header
 
 
 }
