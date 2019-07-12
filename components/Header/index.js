@@ -9,10 +9,7 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-const headerContainer = document.querySelector(".header-container")
-// headerContainer.appendChild(Header())
-
-function Header() {
+function createHeader(){
 
 //create elements
     const header = document.createElement('div')
@@ -20,7 +17,7 @@ function Header() {
     const title = document.createElement('h1')
     const temp = document.createAttribute('span')
 
-// set styles
+// set class
     header.classList.add('header')
     date.classList.add('date')
     title.classList.add('h1')
@@ -32,13 +29,13 @@ function Header() {
     temp.textContent = '98°'
 
 // organize
-
     header.appendChild(title)
     title.appendChild(date)
     title.appendChild(temp)
 
-return Header
-
+    return header
 
 }
 
+const headerContainer = document.querySelector(".header")
+// headerContainer.appendChild(createHeader())
