@@ -28,13 +28,12 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles/`)
 
         const articles = [jsArticles, bootStrap, techArticle, jqueryArt, nodeArt]
 
-        articles.forEach(article => {
+        articles.forEach( article => {
             article.forEach(artic => {
                 const cardContainer = document.querySelector('.cards-container')
                 cardContainer.appendChild(createCards(artic))
             })
         })
-
         console.log('Working:', data)
     })
     .catch(error => {
@@ -56,30 +55,22 @@ function createCards(par){
     headline.classList.add('headline')
     author.classList.add('author')
     image.classList.add('image-container')
+    
 
     //set content
 
     headline.textContent = par.headline
-    // img.src = par.authorPhoto
-     authorsName.textContent = 'Hello',par.name
+    img.src = par.authorPhoto
+    authorsName.textContent = par.authorName
 
     // organize
+    image.appendChild(img)
+    author.appendChild(image)
+    author.appendChild(authorsName)
     card.appendChild(headline)
     card.appendChild(author)
-    headline.appendChild(image)
-    image.appendChild(img)
-    headline.appendChild(authorsName)
-
-    // image.appendChild(img)
-    // author.appendChild(image)
-    // author.appendChild(authorsName)
-    // card.appendChild(img)
-    // card.appendChild(author)
-    // card.appendChild(headline)
 
     return card
 
 }
 
-// const cardContainer = document.querySelector('.cards-container')
-// cardContainer.appendChild(createCards())
