@@ -46,17 +46,15 @@ function createCards(par){
     const headline = document.createElement('div')
     const author = document.createElement('div')
     const image = document.createElement('div')
-    const img = document.createElement('href')
+    const img = document.createElement('img')
     const authorsName = document.createElement('span')
-    ////const authorsDiv = document.createElement('div')
 
     //set class
     card.classList.add('card')
     headline.classList.add('headline')
     author.classList.add('author')
-    image.classList.add('image-container')
+    image.classList.add('img-container')
     
-
     //set content
 
     headline.textContent = par.headline
@@ -64,8 +62,8 @@ function createCards(par){
     authorsName.textContent = par.authorName
 
     // organize
-    image.appendChild(img)
     author.appendChild(image)
+    image.appendChild(img)
     author.appendChild(authorsName)
     card.appendChild(headline)
     card.appendChild(author)
