@@ -21,21 +21,21 @@ function createHeader(){
     header.classList.add('header')
     date.classList.add('date')
     title.classList.add('h1')
-    temp.classList.add('temp')
+   // temp.classList.add('temp')
 
 //set content
     date.textContent = 'March 28, 2019'
     title.textContent = 'Lambda Times'
-    temp.textContent = '98°'
+//    temp.textContent = '98°'
 
 // organize
     header.appendChild(title)
     title.appendChild(date)
-    title.appendChild(temp)
+  //  title.appendChild(temp)
 
     return header
 
 }
 
-const headerContainer = document.querySelector(".header")
-// headerContainer.appendChild(createHeader())
+const nn = document.querySelector('.header-container')
+nn.appendChild(createHeader())
