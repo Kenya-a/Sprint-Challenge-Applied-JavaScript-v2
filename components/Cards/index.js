@@ -20,12 +20,27 @@
 
 axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     .then(data => {
+        const jsArticles = data.data.articles.javascript
+        const bootStrap = data.data.articles.bootstrap
+        const techArticle = data.data.articles.technology
+        const jqueryArt = data.data.articles.jquery
+        const nodeArt = data.data.articles.nodeArt
+
+        const articles = [jsArticles, bootStrap, techArticle, jqueryArt, nodeArt]
+
+        articles.forEach(article => {
+            article.forEach(artic => {
+                const cardContainer = document.querySelector('.cards-container')
+                cardContainer.appendChild(createCards(artic))
+            })
+        })
+
         console.log('Working:', data)
     })
     .catch(error => {
         console.log('Error:', error)
     })
-    
+
 function createCards(){
     //create elements
     const card = document.createElement('div')
@@ -55,5 +70,5 @@ function createCards(){
 
 }
 
-const cardContainer = document.querySelector('.cards-container')
-cardContainer.appendChild(createCards())
+// const cardContainer = document.querySelector('.cards-container')
+// cardContainer.appendChild(createCards())
