@@ -13,24 +13,32 @@ lambdaTab.appendChild(tabs())
 
 axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then(data => {
-         const topic =  data.data.topics
-         console.log('this is data:', topic)
+         const topics =  data.data.topics
+        topics.forEach(topic => {
+            const topicDiv = document.createElement('div');
+            const topicClass = document.querySelector('.topics');
+            topicDiv.classList.add('tab');
+            topicDiv.textContent = topic;
+            topicClass.appendChild(topicDiv)
         })
+        console.log("It works", topics);
+    })
 
+    
     .catch(error => {
          console.log('ERROR, help is on the way:', error)
          })
 
 
- function tabs() {
+ function tabs(jp) {
        //create elements
     const tabs = document.createElement('div')
 
       //set class
-    tabs.classList.add('tabs')
+    tabs.classList.add('topics')
 
     //set content
-    tabs.textContent = 'Topic here'
+    tabs.textContent = jp
             
     return tabs
    }
